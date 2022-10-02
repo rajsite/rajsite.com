@@ -1,30 +1,53 @@
 name: webvi-experiments ci
 
 on:
+  # Runs on pushes targeting the default branch
   push:
-    branches:
-    - master
+    branches: [$default-branch]
+
+# Using example https://github.com/actions/starter-workflows/blob/51e3d515e95876eed0c47cd971e48fcf16c6705a/pages/static.yml
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  build:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v1
-    - name: Install ruby
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: '2.6'
-    - name: Install dependencies
-      run: |
-        npm ci
-        gem install dpl
-    - name: Build 
-      run: npm run build
-    - name: Upload build
-      uses: actions/upload-artifact@v1
-      with:
-        name: build
-        path: ./_site
-    - name: Deploy to GitHub Pages
-      run: dpl --provider=pages --repo=rajsite/rajsite.com --local_dir=_site --skip_cleanup --name=rajsite --email=rajsite@users.noreply.github.com --github-token=${{secrets.GITHUBPAGESDEPLOYTOKEN}}
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+      - name: Install npm dependencies
+        run: npm ci
+      - name: Build 
+        run: npm run build
+      - name: Upload build
+        uses: actions/upload-artifact@v1
+        with:
+          name: build
+          path: ./_site
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: './_site'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
