@@ -1,6 +1,9 @@
 module.exports = function (eleventyConfig) {
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+  const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(UpgradeHelper);
 
   // Mardown config
   const markdownIt = require("markdown-it");

@@ -6,7 +6,7 @@ My name is Milan Raj. I develop {% hoverhint "modern web apps" "Progressive weba
 
 Technologies that pique my interest these days are [Web Components][web_components], [Physical Web][physical_web] with [Web Bluetooth][web_bluetooth], the [Rust programming language][rust], [Web Assembly][wasm], and pushing the limits of [NI LabVIEW's web technologies][labview_web_services].
 
-Let's get in touch! {% include icon-github.html %}{% include icon-twitter.html %}{% include icon-linkedin.html %}
+Let's get in touch! {% include "icon-github.html" %}{% include "icon-twitter.html" %}{% include "icon-linkedin.html" %}
 
 [web_components]: https://webcomponents.org/
 [physical_web]: https://google.github.io/physical-web/
