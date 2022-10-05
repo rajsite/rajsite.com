@@ -12,5 +12,5 @@ Let's get in touch! {% include "social-github.html" %}{% include "social-twitter
 [physical_web]: https://google.github.io/physical-web/
 [web_bluetooth]: https://www.w3.org/community/web-bluetooth/
 [rust]: https://www.rust-lang.org/
-[wasm]: https://webassembly.github.io/
+[wasm]: https://webassembly.org/
 [labview_web_services]: https://decibel.ni.com/content/groups/web-services

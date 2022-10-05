@@ -30,7 +30,7 @@ Using Inspect and the Elements pane to find where the temperature is located in 
 
 2. The page might not be very easy to parse. Many pages at best have lots of extraneous information and at worst have invalid / poorly structured HTML.
 
-3. The Elements pane shows the live DOM tree _including_ manipulations by JavaScript. The data might not be in the source HTML and instead may be gathered programmatically via JavaScript and then added to the DOM.
+3. The Elements pane shows the live DOM tree *including* manipulations by JavaScript. The data might not be in the source HTML and instead may be gathered programmatically via JavaScript and then added to the DOM.
 
 ### Use an API When Available
 
@@ -91,7 +91,7 @@ A LabVIEW VI that calls the Weather Underground API using a zip code and an API 
 
 ### When An API is Not Available
 
-If the web service does not provide an API it is time to get crafty. We have to resort on relying on HTML structure or finding out where data is dynamically loaded from. This is the approach used by [the video](#topofpage) and can be summarized roughly as follows:
+If the web service does not provide an API it is time to get crafty. We have to resort on relying on HTML structure or finding out where data is dynamically loaded from. This is the approach used by the video at the top of the page and can be summarized roughly as follows:
 
 1. Find a web page you want to scrape in your web browser.
 

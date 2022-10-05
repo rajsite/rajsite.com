@@ -1,0 +1,13 @@
+{
+    "ignoreRegExpList": [
+        "/(```+)\\s?json[\\s\\S]+?\\1/g"
+    ],
+    "language": "en",
+    "words": [
+        "rajsite",
+        "hoverhint",
+        "videoid",
+        "quadrotor",
+        "webscale"
+    ]
+}
