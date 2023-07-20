@@ -14,20 +14,21 @@
   },
   "homepage": "https://github.com/rajsite/rajsite.github.io#readme",
   "scripts": {
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "test": "npm run lint && npm run spelling && npm run link",
+    "build": "eleventy",
+    "link": "glob-exec --foreach \"{./*.md,./_posts/*.md}\" -- \"npm run markdown-link-check -- -c .linkcheck.json {{file}}\"",
+    "markdown-link-check": "markdown-link-check",
     "lint": "markdownlint {./*.md,./_posts/*.md}",
     "spelling": "cspell \"**/*.md\"",
-    "link": "glob-exec --foreach \"{./*.md,./_posts/*.md}\" -- \"npm run markdown-link-check -- -c .linkcheck.json {{file}}\"",
-    "markdown-link-check": "markdown-link-check"
+    "test": "npm run lint && npm run spelling && npm run link",
+    "start": "eleventy --serve"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.19.7",
-    "astro": "^2.8.3",
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "cspell": "^6.12.0",
     "glob-exec": "^0.1.1",
+    "markdown-it-anchor": "^8.6.5",
+    "markdown-it-container": "^3.0.0",
     "markdown-link-check": "^3.10.3",
     "markdownlint-cli": "^0.32.2"
   }
