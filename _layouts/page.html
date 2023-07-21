@@ -1,12 +1,14 @@
 ---
-import Footer from "./footer.astro";
+layout: default
 ---
 <main class="content" role="main">
 <article class="post">
 <section class="post-content">
-<slot></slot>
+<a name="topofpage"></a>
+{{content}}
 </section>
 
 </article>
 </main>
-<Footer></Footer>
+
+{% include "footer.html" %}
