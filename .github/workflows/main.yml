@@ -33,7 +33,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '18'
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
       - name: Install npm dependencies
@@ -43,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './_site'
+          path: './dist'
       - name: Test 
         run: npm run test
       - name: Setup Pages

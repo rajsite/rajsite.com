@@ -1,6 +1,8 @@
 {
     "ignoreRegExpList": [
-        "/(```+)\\s?json[\\s\\S]+?\\1/g"
+        "/(```+)\\s?json[\\s\\S]+?\\1/g",
+        "/^([-]{3}|[+]{3}|[.]{3})$[\\s\\S]+^([-]{3}|[+]{3}|[.]{3})$/gm"
+
     ],
     "language": "en",
     "words": [
@@ -8,6 +10,9 @@
         "hoverhint",
         "videoid",
         "quadrotor",
-        "webscale"
+        "webscale",
+        "labview",
+        "frontmatter",
+        "astro"
     ]
 }

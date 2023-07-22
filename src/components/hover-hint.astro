@@ -1,0 +1,8 @@
+---
+interface Props {
+    hint: string;
+}
+
+const { hint } = Astro.props;
+---
+<span class="hover-hint" title={hint}><slot></slot></span>
