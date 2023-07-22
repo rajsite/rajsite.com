@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config';
 
-import mdx from "@astrojs/mdx";
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
+// eslint-disable-next-line import/no-default-export
 export default defineConfig({
-  integrations: [mdx()],
-  markdown: {
-    syntaxHighlight: 'prism',
-  },
+    integrations: [mdx()],
+    markdown: {
+        syntaxHighlight: 'prism',
+    },
 });

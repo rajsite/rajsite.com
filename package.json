@@ -17,18 +17,16 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "npm run lint && npm run spelling && npm run link",
-    "lint": "markdownlint {./*.md,./_posts/*.md}",
-    "spelling": "cspell \"**/*.md\"",
-    "link": "glob-exec --foreach \"{./*.md,./_posts/*.md}\" -- \"npm run markdown-link-check -- -c .linkcheck.json {{file}}\"",
-    "markdown-link-check": "markdown-link-check"
+    "test": "npm run lint && npm run spelling",
+    "lint": "eslint .",
+    "spelling": "cspell \"**/*.{md,mdx}\""
   },
-  "dependencies": {
+  "devDependencies": {
     "@astrojs/mdx": "^0.19.7",
+    "@ni/eslint-config-typescript": "^4.2.1",
     "astro": "^2.8.3",
     "cspell": "^6.12.0",
-    "glob-exec": "^0.1.1",
-    "markdown-link-check": "^3.10.3",
-    "markdownlint-cli": "^0.32.2"
+    "eslint-plugin-astro": "^0.27.2",
+    "eslint-plugin-jsx-a11y": "^6.7.1"
   }
 }

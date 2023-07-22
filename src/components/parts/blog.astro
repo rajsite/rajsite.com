@@ -1,68 +1,69 @@
 ---
 import iconTwitter from '../icons/icon-twitter.svg?raw';
-import SocialGithub from "../icons/social-github.astro";
-import SocialTwitter from "../icons/social-twitter.astro";
-import SocialLinkedin from "../icons/social-linkedin.astro";
+import SocialGithub from '../icons/social-github.astro';
+import SocialTwitter from '../icons/social-twitter.astro';
+import SocialLinkedin from '../icons/social-linkedin.astro';
 
-import { site } from "../../site";
+import { site } from '../../site';
+
 interface Props {
-  date: Date;
-  slug: string;
-  id: string;
+    date: Date;
+    slug: string;
+    id: string;
 }
 
 const { date, slug, id } = Astro.props;
 ---
 <main class="content" role="main">
-<article class="post">
-<section class="post-content">
-<slot></slot>
-</section>
-<footer class="post-footer">
-<section class="share">
-<a class="icon" href={`https://github.com/rajsite/rajsite.com/tree/main/src/content/blog/${id}`}>
+    <article class="post">
+        <section class="post-content">
+            <slot></slot>
+        </section>
+        <footer class="post-footer">
+            <section class="share">
+                <a class="icon" href={`https://github.com/rajsite/rajsite.com/tree/main/src/content/blog/${id}`}>
 Suggest an Edit
-</a>
-<a class="icon" href={`https://twitter.com/intent/tweet?url=https://rajsite.com/${slug}&via=rajsite`} target="_blank" title="Share on Twitter">
+                </a>
+                <a class="icon" href={`https://twitter.com/intent/tweet?url=https://rajsite.com/${slug}&via=rajsite`} target="_blank" title="Share on Twitter">
 Share on <span class="icon"><Fragment set:html={iconTwitter} /></span>
-</a>
-</section>
-</footer>
+                </a>
+            </section>
+        </footer>
 
-<div class="teaser">
+        <div class="teaser">
 
-<div class="teaser-left">
-<h5 class="index-headline">Written by</h5>
+            <div class="teaser-left">
+                <h5 class="index-headline">Written by</h5>
 
-<section class="author">
-<div class="author-card">
-<div class="author-image"></div>
-<h4 class="author-name">{site.name}</h4>
-<p class="author-bio">{site.bio}</p>
-</div>
+                <section class="author">
+                    <div class="author-card">
+                        <div class="author-image"></div>
+                        <h4 class="author-name">{site.name}</h4>
+                        <p class="author-bio">{site.bio}</p>
+                    </div>
 
-<div class="author-meta">
-<p class="author-social">
-<SocialGithub />
-<SocialTwitter />
-<SocialLinkedin />
-</p>
-<hr>
-<p class="published">Published <time datetime={date.toISOString()}>{ new Intl.DateTimeFormat("en-UK", {dateStyle:'medium'}).format(date)}</time>
-</p>
-</div>
-</section>
-</div>
+                    <div class="author-meta">
+                        <p class="author-social">
+                            <SocialGithub />
+                            <SocialTwitter />
+                            <SocialLinkedin />
+                        </p>
+                        <hr>
+                        <p class="published">Published <time datetime={date.toISOString()}>{ new Intl.DateTimeFormat('en-UK', { dateStyle: 'medium' }).format(date)}</time>
+                        </p>
+                    </div>
+                </section>
+            </div>
 
-<div class="teaser-right">
-<h5 class="index-headline">Powered By</h5>
+            <div class="teaser-right">
+                <h5 class="index-headline">Powered By</h5>
 
-<footer class="site-footer">
-<section class="poweredby">Proudly published with <a href="https://pages.github.com/">Github Pages</a>, <a href="https://www.11ty.dev/">Eleventy</a>, <a href="https://amp.dev/">AMP Project</a>, and <a href="https://github.com/ageitgey/amplify">Amplify</a></section>
-<section class="copyright">All content copyright <a href={site.contact_url}>{site.name}</a> &copy; {site.year}<br>All rights reserved.</section>
-</footer>
-</div>
+                <footer class="site-footer">
+                    <section class="poweredby">Proudly published with <a href="https://pages.github.com/">Github Pages</a>, <a href="https://www.11ty.dev/">Eleventy</a>, <a href="https://amp.dev/">AMP Project</a>, and <a href="https://github.com/ageitgey/amplify">Amplify</a></section>
+                    <section class="copyright">All content copyright <a href={site.contact_url}>{site.name}</a> &copy; {site.year}<br>All rights reserved.</section>
+                </footer>
+            </div>
 
-</div>
-</article>
+        </div>
+    </article>
 </main>
