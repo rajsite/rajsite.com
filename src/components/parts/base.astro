@@ -39,19 +39,16 @@ ${styles}
     </head>
 
     <body>
-        <amp-analytics type="googleanalytics" id="analytics">
+        <amp-analytics type="gtag" data-credentials="include">
             <script type="application/json">
-{
-  "vars": {
-    "account": "UA-78463139-1"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    }
-  }
-}
+            {
+              "vars" : {
+                "gtag_id": "G-9VCBK8SNM9",
+                "config" : {
+                  "G-9VCBK8SNM9": { "groups": "default" }
+                }
+              }
+            }
             </script>
         </amp-analytics>
 
