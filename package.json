@@ -17,16 +17,18 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "npm run lint && npm run spelling",
+    "test": "astro check && npm run lint && npm run spelling",
     "lint": "eslint .",
     "spelling": "cspell \"**/*.{md,mdx}\""
   },
   "devDependencies": {
-    "@astrojs/mdx": "^0.19.7",
+    "@astrojs/mdx": "^2.0.3",
     "@ni/eslint-config-typescript": "^4.2.1",
-    "astro": "^2.8.3",
-    "cspell": "^6.12.0",
-    "eslint-plugin-astro": "^0.27.2",
-    "eslint-plugin-jsx-a11y": "^6.7.1"
+    "astro": "^4.0.8",
+    "cspell": "^8.2.3",
+    "eslint-plugin-astro": "^0.31.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "@astrojs/check": "^0.3.4",
+    "typescript": "~5.1.0"
   }
 }
