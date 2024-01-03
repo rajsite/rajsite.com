@@ -1,6 +1,5 @@
 ---
 import { site, type AmpImportName } from '../../site';
-import prismcss from './prism-vs.css?raw';
 import styles from './styles.css?raw';
 
 interface Props {
@@ -30,7 +29,6 @@ const { ampImportNames, title, description, slug } = Astro.props;
         <link rel="canonical" href={`${site.url}${slug}`}>
         <title>{title} | {site.name}</title>
         <style amp-custom is:inline set:html={`
-${prismcss}
 ${styles}
 `}></style>
 

@@ -7,6 +7,11 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
     integrations: [mdx()],
     markdown: {
-        syntaxHighlight: 'prism',
+        shikiConfig: {
+            experimentalThemes: {
+                light: 'github-light',
+                dark: 'github-dark',
+            },
+        },
     },
 });
