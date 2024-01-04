@@ -24,14 +24,13 @@ const { title, description, slug } = Astro.props;
     </head>
 
     <body>
+        <img src={`https://rajsite.goatcounter.com/count?p=${slug}`} alt="" />
         <header class="site-header">
             <a href="/" class="logo"><span class="logo"><img src={ site.logo } width="48" height="48" alt="Rajsite logo" /></span></a>
             <div class="page-links">
                 <a class="page-link" href="/">Home</a><span> • </span><a class="page-link" href="/about">About</a>
             </div>
         </header>
-
         <slot></slot>
-
     </body>
 </html>
