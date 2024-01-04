@@ -293,6 +293,8 @@ body {
 }
 
 .post .post-content figure img {
+  max-inline-size: 100%;
+  block-size: auto;
   text-align: center;
 }
 
