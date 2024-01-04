@@ -5,4 +5,31 @@ interface Props {
 
 const { hint } = Astro.props;
 ---
-<span class="hover-hint" title={hint}><slot></slot></span>
+<style>
+    .hover-hint {
+        border-bottom: 1px dotted lightgray;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .hover-hint::after {
+        display: none;
+        content: attr(title);
+        margin: 20px;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        white-space: pre-line;
+    }
+
+    .hover-hint:active::after {
+        display: block;
+    }
+</style>
+<span class="hover-hint" title={hint}><slot /></span>

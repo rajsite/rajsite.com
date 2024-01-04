@@ -1,5 +1,4 @@
 import { z, defineCollection } from 'astro:content';
-import { ampImportNames } from '../site';
 
 const blogCollection = defineCollection({
     type: 'content', // v2.5.0 and later
@@ -8,9 +7,6 @@ const blogCollection = defineCollection({
         description: z.string(),
         date: z.date(),
         image: z.string().optional(),
-        ampImportNames: z.array(z.enum(
-            ampImportNames
-        ))
     }),
 });
 
