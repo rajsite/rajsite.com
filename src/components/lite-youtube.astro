@@ -1,0 +1,56 @@
+---
+interface Props {
+    videoid: string;
+    description: string;
+}
+
+const { videoid, description } = Astro.props;
+---
+
+<script>
+    import '@justinribeiro/lite-youtube';
+</script>
+
+<style>
+    lite-youtube {
+        contain: content;
+        display: block;
+        position: relative;
+        width: 100%;
+        padding-bottom: calc(100% / (16 / 9));
+    }
+
+    .lite-youtube-fallback {
+        aspect-ratio: 16 / 9; /* matches YouTube player */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+        background-color: #000;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* right-facing triangle "Play" icon */
+    .lite-youtube-fallback::before {
+        display: block;
+        content: "";
+        border: solid transparent;
+        border-width: 2em 0 2em 3em;
+        border-left-color: red;
+    }
+
+    .lite-youtube-fallback:hover::before {
+        border-left-color: #fff;
+    }
+
+    .lite-youtube-fallback:focus {
+        outline: 2px solid red;
+    }
+</style>
+
+<lite-youtube videoid={videoid}>
+    <a class="lite-youtube-fallback" href={`https://www.youtube.com/watch?v=${videoid}`}>Watch on YouTube: "{description}"</a>
+</lite-youtube>
