@@ -1,6 +1,6 @@
 ---
-import './styles.css';
 import { site } from '../../site';
+import Header from './header.astro';
 
 interface Props {
     title: string;
@@ -20,15 +20,23 @@ const { title, description, slug } = Astro.props;
         <link rel="canonical" href={`${site.url}${slug}`}>
         <title>{title} | {site.name}</title>
     </head>
-
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-font-feature-settings: "liga=1, dlig=1";
+            -ms-font-feature-settings: "liga", "dlig";
+            -webkit-font-feature-settings: "liga", "dlig";
+            -o-font-feature-settings: "liga", "dlig";
+            font-feature-settings: "liga", "dlig";
+        }
+    </style>
     <body>
         <img src={`https://rajsite.goatcounter.com/count?p=${slug}`} width="1" height="1" alt="" />
-        <header class="site-header">
-            <a href="/" class="logo"><span class="logo"><img src={ site.logo } width="48" height="48" alt="Rajsite logo" /></span></a>
-            <div class="page-links">
-                <a class="page-link" href="/">Home</a><span> • </span><a class="page-link" href="/about">About</a>
-            </div>
-        </header>
+        <Header></Header>
         <slot></slot>
     </body>
 </html>

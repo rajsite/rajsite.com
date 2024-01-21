@@ -1,0 +1,36 @@
+---
+import Icon from './icon.astro';
+
+interface Props {
+    iconSvg: string;
+    username: string;
+    url: string;
+    title: string;
+}
+
+const { iconSvg, username, url, title } = Astro.props;
+---
+<style>
+.social-media-icons {
+    white-space: nowrap;
+}
+
+.social-media-icons .username {
+    margin-left: 4px;
+    margin-right: 10px;
+    margin-bottom: 18px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #333333;
+    text-decoration: underline;
+}
+</style>
+<span class="social-media-icons">
+    <a href={url} title={title}><Icon iconSvg={iconSvg}></Icon><span class="username">{username}</span></a>
+</span>

@@ -1,0 +1,24 @@
+---
+interface Props {
+    iconSvg: string;
+}
+
+const { iconSvg } = Astro.props;
+---
+<style>
+.icon {
+  display: inline-block;
+}
+
+.icon > :global(svg) {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.icon > :global(svg path) {
+  fill: #828282;
+}
+</style>
+<span class="icon"><Fragment set:html={iconSvg} /></span>

@@ -1,6 +1,5 @@
 ---
-import htmlString from './icon-github.svg?raw';
+import iconSvg from './icon-github.svg?raw';
+import Social from './social.astro';
 ---
-<span class="social-media-icons">
-    <a href="https://github.com/rajsite" title="rajsite on GitHub"><span class="icon"><Fragment set:html={htmlString} /></span><span class="username">rajsite</span></a>
-</span>
+<Social iconSvg={iconSvg} title='rajsite on GitHub' url='https://github.com/rajsite' username='rajsite'></Social>

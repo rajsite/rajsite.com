@@ -1,6 +1,5 @@
 ---
-import htmlString from './icon-twitter.svg?raw';
+import iconSvg from './icon-twitter.svg?raw';
+import Social from './social.astro';
 ---
-<span class="social-media-icons">
-    <a href="https://twitter.com/rajsite" title="rajsite on Twitter"><span class="icon"><Fragment set:html={htmlString} /></span><span class="username">rajsite</span></a>
-</span>
+<Social iconSvg={iconSvg} title='rajsite on Twitter' url='https://twitter.com/rajsite' username='rajsite'></Social>

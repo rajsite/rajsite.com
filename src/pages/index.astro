@@ -7,32 +7,131 @@ import Footer from '../components/parts/footer.astro';
 const description = 'Bringing Web, Engineering, Cloud, and Earth tidbits straight to your neural implant';
 const allBlogPosts = await getCollection('blog');
 ---
+<style>
+.blog-header {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+}
+
+.blog-header .blog-title {
+  margin-bottom: 8px;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  outline: 0;
+  line-height: 50px;
+  word-break: break-word;
+  color: #333333;
+}
+
+.blog-header .blog-description {
+  font-size: 28px;
+  margin: 0 0 20px;
+  padding: 0;
+  line-height: 1.2;
+  color: #666666;
+  font-weight: 300;
+}
+
+.post .post-meta {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #b3b3b1;
+  line-height: 30px;
+}
+
+.post .post-meta a {
+  color: #b3b3b1;
+  text-decoration: none;
+}
+
+.post .post-meta a:hover {
+  text-decoration: underline;
+}
+
+.post .post-title {
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  font-size: 36px;
+  line-height: 1.15;
+  color: #333332;
+  margin-bottom: 0px 0px;
+  display: block;
+}
+
+.post .post-title a {
+  text-decoration: none;
+  color: #333332;
+}
+
+.post .post-title a:hover {
+  text-decoration: none;
+}
+
+.post .post-excerpt {
+  letter-spacing: -0.02em;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.59;
+  color: #666665;
+}
+
+.content {
+  width: 100%;
+  max-width: 700px;
+  margin: 25px auto 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 800px) {
+  .content {
+    padding: 0 16px;
+  }
+}
+
+.content article {
+  padding: 0;
+  border-bottom: 1px solid #f2f2f0;
+}
+
+.content article:last-child {
+  border-bottom: 0px;
+}
+
+</style>
 <Base title="Home" description={description} slug="/">
 
-    <main class="content" role="main">
+    <main class="content">
 
         <header class="blog-header">
             <h1 class="blog-title">{ site.name }</h1>
             <h2 class="blog-description">{ description }</h2>
         </header>
 
-        <div class="cf">
-            {allBlogPosts.map(post => (
-                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-                    <div class="article-item">
-                        <header class="post-header">
-                            <h2 class="post-title" itemprop="name"><a href={post.slug} itemprop="url">{post.data.title}</a></h2>
-                        </header>
-                        <section class="post-excerpt" itemprop="description">
-                            <p>{post.data.description}</p>
-                        </section>
-                        <div class="post-meta">
-                            <time datetime={ post.data.date.toISOString()}>{ new Intl.DateTimeFormat('en-UK', { dateStyle: 'medium' }).format(post.data.date)}</time>
-                        </div>
-                    </div>
-                </article>
-            ))}
-        </div>
+        {allBlogPosts.map(post => (
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                <header class="post-header">
+                    <h2 class="post-title" itemprop="name"><a href={post.slug} itemprop="url">{post.data.title}</a></h2>
+                </header>
+                <section class="post-excerpt" itemprop="description">
+                    <p>{post.data.description}</p>
+                </section>
+                <div class="post-meta">
+                    <time datetime={ post.data.date.toISOString()}>{ new Intl.DateTimeFormat('en-UK', { dateStyle: 'medium' }).format(post.data.date)}</time>
+                </div>
+            </article>
+        ))}
     </main>
 
     <Footer />

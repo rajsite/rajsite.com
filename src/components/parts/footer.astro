@@ -1,6 +1,27 @@
 ---
 import { site } from '../../site';
 ---
+<style>
+.site-footer {
+  margin: 0 auto;
+  padding: 48px 0;
+  width: 100%;
+  max-width: 700px;
+  font-size: 12px;
+  text-align: center;
+  color: #999999;
+  line-height: 17.6px;
+}
+
+.site-footer a {
+  color: #666666;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #333333;
+}
+</style>
 <footer class="site-footer">
     <section class="copyright">All content copyright <a href={ site.contact_url}>{ site.name }</a> &copy; { site.year } &bull; All rights reserved.</section>
     <section class="poweredby">Made with <a href="https://pages.github.com/">Github Pages</a> and <a href="https://astro.build/">Astro</a></section>

@@ -1,12 +1,39 @@
 ---
 import Footer from './footer.astro';
+import Markdown from './markdown.astro';
 ---
-<main class="content" role="main">
+<style>
+.content {
+  width: 100%;
+  max-width: 700px;
+  margin: 25px auto 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 800px) {
+  .content {
+    padding: 0 16px;
+  }
+}
+
+.content article {
+  padding: 0;
+  border-bottom: 1px solid #f2f2f0;
+}
+
+.content article:last-child {
+  border-bottom: 0px;
+}
+</style>
+<main class="content">
     <article class="post">
         <section class="post-content">
-            <slot></slot>
+            <Markdown>
+                <slot></slot>
+            </Markdown>
         </section>
-
     </article>
 </main>
 <Footer></Footer>

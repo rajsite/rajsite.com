@@ -30,6 +30,7 @@
     "cspell": "^8.2.3",
     "eslint-plugin-astro": "^0.31.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
+    "sass": "^1.69.7",
     "typescript": "~5.1.0"
   },
   "dependencies": {

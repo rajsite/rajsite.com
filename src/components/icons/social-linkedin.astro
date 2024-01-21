@@ -1,6 +1,5 @@
 ---
-import htmlString from './icon-linkedin.svg?raw';
+import iconSvg from './icon-linkedin.svg?raw';
+import Social from './social.astro';
 ---
-<span class="social-media-icons">
-    <a href="https://linkedin.com/in/milanraj" title="milanraj on LinkedIn"><span class="icon"><Fragment set:html={htmlString} /></span><span class="username">milanraj</span></a>
-</span>
+<Social iconSvg={iconSvg} title='milanraj on LinkedIn' url='https://linkedin.com/in/milanraj' username='milanraj'></Social>

@@ -5,6 +5,8 @@ import SocialTwitter from '../icons/social-twitter.astro';
 import SocialLinkedin from '../icons/social-linkedin.astro';
 
 import { site } from '../../site';
+import Markdown from './markdown.astro';
+import Icon from '../icons/icon.astro';
 
 interface Props {
     date: Date;
@@ -14,56 +16,222 @@ interface Props {
 
 const { date, slug, id } = Astro.props;
 ---
-<main class="content" role="main">
-    <article class="post">
-        <section class="post-content">
-            <slot></slot>
-        </section>
-        <footer class="post-footer">
-            <section class="share">
-                <a class="icon" href={`https://github.com/rajsite/rajsite.com/tree/main/src/content/blog/${id}`}>
+<style>
+.share {
+  text-align: right;
+  padding: 20px 0 0;
+}
+
+.share a {
+  text-decoration: none;
+  color: #bbbbbb;
+  padding-left: 12px;
+}
+
+.share a .hidden {
+  display: none;
+}
+
+.share a:hover {
+  color: #333333;
+}
+
+.teaser {
+  padding: 50px 0 0 0;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.teaser hr {
+  border: 0;
+  padding: 0;
+  display: block;
+  width: 50%;
+  margin: 16px 0 16px 10px;
+  border: 0px solid #dddddd;
+  border-top: 1px solid #dddddd;
+}
+
+.teaser .index-headline {
+  border-top: 1px solid #dededc;
+  margin: 0;
+  padding: 16px 0;
+  color: #b3b3b1;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+}
+
+.teaser .teaser-left {
+  font-size: 14px;
+  float: left;
+  width: 47%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 800px) {
+  .teaser .teaser-left {
+    width: 100%;
+    padding-bottom: 32px;
+  }
+}
+
+.teaser .teaser-left .author-card {
+  overflow: hidden;
+  height: auto;
+}
+
+.teaser .teaser-left .author-image {
+  background-image: url('/assets/images/author.png');
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  float: left;
+  background-size: cover;
+  border-radius: 100%;
+}
+
+.teaser .teaser-left .author-name {
+  font-size: 18px;
+  margin: 0;
+}
+
+.teaser .teaser-left .author-bio {
+  margin-top: 1em;
+}
+
+.teaser .teaser-left .author-social {
+  line-height: 2em;
+  margin: 0;
+}
+
+.teaser .teaser-left .author-meta {
+  padding-left: 10px;
+}
+
+.teaser .teaser-left .published {
+  color: #999999;
+}
+
+.teaser .teaser-right {
+  float: right;
+  width: 47%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 800px) {
+  .teaser .teaser-right {
+    width: 100%;
+  }
+}
+
+.site-footer {
+  margin: 0 auto;
+  padding: 48px 0;
+  width: 100%;
+  max-width: 700px;
+  font-size: 12px;
+  text-align: center;
+  color: #999999;
+  line-height: 17.6px;
+}
+
+.site-footer a {
+  color: #666666;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #333333;
+}
+
+.teaser .teaser-right .site-footer {
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #999999;
+}
+
+.teaser .teaser-right .site-footer .poweredby {
+  display: block;
+  padding-bottom: 18px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.content {
+  width: 100%;
+  max-width: 700px;
+  margin: 25px auto 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 800px) {
+  .content {
+    padding: 0 16px;
+  }
+}
+
+.content article {
+  padding: 0;
+  border-bottom: 1px solid #f2f2f0;
+}
+
+.content article:last-child {
+  border-bottom: 0px;
+}
+</style>
+<main class="content">
+    <Markdown>
+        <slot></slot>
+    </Markdown>
+    <footer>
+        <section class="share">
+            <a class="icon" href={`https://github.com/rajsite/rajsite.com/tree/main/src/content/blog/${id}`}>
 Suggest an Edit
-                </a>
-                <a class="icon" href={`https://twitter.com/intent/tweet?url=https://rajsite.com/${slug}&via=rajsite`} target="_blank" title="Share on Twitter">
-Share on <span class="icon"><Fragment set:html={iconTwitter} /></span>
-                </a>
+            </a>
+            <a class="icon" href={`https://twitter.com/intent/tweet?url=https://rajsite.com${slug}&via=rajsite`} target="_blank" title="Share on Twitter">
+Share on <Icon iconSvg={iconTwitter}></Icon>
+            </a>
+        </section>
+    </footer>
+
+    <div class="teaser">
+        <div class="teaser-left">
+            <h5 class="index-headline">Written by</h5>
+            <section class="author">
+                <div class="author-card">
+                    <div class="author-image"></div>
+                    <h4 class="author-name">{site.name}</h4>
+                    <p class="author-bio">{site.bio}</p>
+                </div>
+                <div class="author-meta">
+                    <p class="author-social">
+                        <SocialGithub></SocialGithub>
+                        <SocialTwitter></SocialTwitter>
+                        <SocialLinkedin></SocialLinkedin>
+                    </p>
+                    <hr>
+                    <p class="published">Published <time datetime={date.toISOString()}>{ new Intl.DateTimeFormat('en-UK', { dateStyle: 'medium' }).format(date)}</time>
+                    </p>
+                </div>
             </section>
-        </footer>
-
-        <div class="teaser">
-
-            <div class="teaser-left">
-                <h5 class="index-headline">Written by</h5>
-
-                <section class="author">
-                    <div class="author-card">
-                        <div class="author-image"></div>
-                        <h4 class="author-name">{site.name}</h4>
-                        <p class="author-bio">{site.bio}</p>
-                    </div>
-
-                    <div class="author-meta">
-                        <p class="author-social">
-                            <SocialGithub />
-                            <SocialTwitter />
-                            <SocialLinkedin />
-                        </p>
-                        <hr>
-                        <p class="published">Published <time datetime={date.toISOString()}>{ new Intl.DateTimeFormat('en-UK', { dateStyle: 'medium' }).format(date)}</time>
-                        </p>
-                    </div>
-                </section>
-            </div>
-
-            <div class="teaser-right">
-                <h5 class="index-headline">Powered By</h5>
-
-                <footer class="site-footer">
-                    <section class="poweredby">Proudly published with <a href="https://pages.github.com/">Github Pages</a> and <a href="https://astro.build/">Astro</a></section>
-                    <section class="copyright">All content copyright <a href={site.contact_url}>{site.name}</a> &copy; {site.year}<br>All rights reserved.</section>
-                </footer>
-            </div>
-
         </div>
-    </article>
+        <div class="teaser-right">
+            <h5 class="index-headline">Powered By</h5>
+            <footer class="site-footer">
+                <section class="poweredby">Proudly published with <a href="https://pages.github.com/">Github Pages</a> and <a href="https://astro.build/">Astro</a></section>
+                <section class="copyright">All content copyright <a href={site.contact_url}>{site.name}</a> &copy; {site.year}<br>All rights reserved.</section>
+            </footer>
+        </div>
+    </div>
 </main>
