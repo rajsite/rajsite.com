@@ -23,14 +23,14 @@
     "spelling": "cspell \"**/*.{md,mdx}\""
   },
   "devDependencies": {
-    "@astrojs/check": "^0.3.4",
-    "@astrojs/mdx": "^2.0.3",
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/mdx": "^2.1.0",
     "@ni/eslint-config-typescript": "^4.2.1",
-    "astro": "^4.0.8",
-    "cspell": "^8.2.3",
-    "eslint-plugin-astro": "^0.31.0",
+    "astro": "^4.2.6",
+    "cspell": "^8.3.2",
+    "eslint-plugin-astro": "^0.31.3",
     "eslint-plugin-jsx-a11y": "^6.8.0",
-    "sass": "^1.69.7",
+    "sass": "^1.70.0",
     "typescript": "~5.1.0"
   },
   "dependencies": {

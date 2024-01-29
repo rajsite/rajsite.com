@@ -20,22 +20,22 @@ const { title, description, slug } = Astro.props;
         <link rel="canonical" href={`${site.url}${slug}`}>
         <link rel="stylesheet" href="/tokens.css" >
         <title>{title} | {site.name}</title>
+        <style lang="scss">
+            @import './tokens.scss';
+            body {
+                font-family: $rajsite-body-font-family;
+                margin: 0;
+                padding: 0;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                -moz-font-feature-settings: "calt=1";
+                -ms-font-feature-settings: "calt";
+                -webkit-font-feature-settings: "calt";
+                -o-font-feature-settings: "calt";
+                font-feature-settings: "calt";
+            }
+        </style>
     </head>
-    <style lang="scss">
-        @import './tokens.scss';
-        body {
-            font-family: $rajsite-body-font-family;
-            margin: 0;
-            padding: 0;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-font-feature-settings: "calt=1";
-            -ms-font-feature-settings: "calt";
-            -webkit-font-feature-settings: "calt";
-            -o-font-feature-settings: "calt";
-            font-feature-settings: "calt";
-        }
-    </style>
     <body>
         <img src={`https://rajsite.goatcounter.com/count?p=${slug}`} width="1" height="1" alt="" />
         <Header></Header>
