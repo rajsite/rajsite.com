@@ -7,7 +7,8 @@ import Footer from '../components/parts/footer.astro';
 const description = 'Bringing Web, Engineering, Cloud, and Earth tidbits straight to your neural implant';
 const allBlogPosts = await getCollection('blog');
 ---
-<style>
+<style lang="scss">
+@import '../components/parts/tokens.scss';
 .blog-header {
   width: 100%;
   max-width: 700px;
@@ -41,7 +42,7 @@ const allBlogPosts = await getCollection('blog');
 }
 
 .post .post-meta {
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: $rajsite-body-font-family;
   font-size: 14px;
   color: #b3b3b1;
   line-height: 30px;

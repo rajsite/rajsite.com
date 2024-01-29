@@ -1,0 +1,96 @@
+/*
+200: Extra Light
+300: Light
+400: Regular
+500: Medium
+600: Semibold
+700: Bold
+800: ExtraBold
+*/
+
+:root {
+    --rajsite-body-font-family: 'Monaspace Argon';
+    --rajsite-header-font-family: 'Monaspace Neon';
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Monaspace Argon';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/MonaspaceArgon-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monaspace Krypton';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/MonaspaceKrypton-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monaspace Neon';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/MonaspaceNeon-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monaspace Radon';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/MonaspaceRadon-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monaspace Xenon';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/MonaspaceXenon-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Monaspace Argon';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./assets/fonts/MonaspaceArgon-Bold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monaspace Krypton';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./assets/fonts/MonaspaceKrypton-Bold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monaspace Neon';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./assets/fonts/MonaspaceNeon-Bold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monaspace Radon';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./assets/fonts/MonaspaceRadon-Bold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monaspace Xenon';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./assets/fonts/MonaspaceXenon-Bold.woff') format('woff');
+    font-display: swap;
+}

@@ -10,7 +10,9 @@ interface Props {
 
 const { iconSvg, username, url, title } = Astro.props;
 ---
-<style>
+<style lang="scss">
+@import '../parts/tokens.scss';
+
 .social-media-icons {
     white-space: nowrap;
 }
