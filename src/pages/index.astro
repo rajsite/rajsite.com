@@ -8,7 +8,7 @@ const description = 'Bringing Web, Engineering, Cloud, and Earth tidbits straigh
 const allBlogPosts = await getCollection('blog');
 ---
 <style lang="scss">
-@import '../components/parts/tokens.scss';
+@use '../styles/tokens.scss';
 .blog-header {
   width: 100%;
   max-width: 700px;
@@ -42,7 +42,7 @@ const allBlogPosts = await getCollection('blog');
 }
 
 .post .post-meta {
-  font-family: $rajsite-body-font-family;
+  font-family: tokens.$rajsite-body-font-family;
   font-size: 14px;
   color: #b3b3b1;
   line-height: 30px;

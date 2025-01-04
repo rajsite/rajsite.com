@@ -6,7 +6,7 @@ interface Props {
 const { hint } = Astro.props;
 ---
 <style lang="scss">
-    @import './parts/tokens.scss';
+    @use '../styles/tokens.scss';
     .hover-hint {
         border-bottom: 1px dotted lightgray;
         -webkit-touch-callout: none;

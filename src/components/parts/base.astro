@@ -21,9 +21,9 @@ const { title, description, slug } = Astro.props;
         <link rel="stylesheet" href="/tokens.css" >
         <title>{title} | {site.name}</title>
         <style lang="scss">
-            @import './tokens.scss';
+            @use '../../styles/tokens.scss';
             body {
-                font-family: $rajsite-body-font-family;
+                font-family: tokens.$rajsite-body-font-family;
                 margin: 0;
                 padding: 0;
                 text-rendering: optimizeLegibility;

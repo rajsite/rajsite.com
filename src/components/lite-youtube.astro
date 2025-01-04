@@ -12,7 +12,7 @@ const { videoid, description } = Astro.props;
 </script>
 
 <style lang="scss">
-    @import './parts/tokens.scss';
+    @use '../styles/tokens.scss';
 
     .lite-youtube-fallback {
         aspect-ratio: 16 / 9; /* matches YouTube player */

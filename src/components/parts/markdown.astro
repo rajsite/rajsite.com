@@ -1,13 +1,14 @@
 <style lang="scss">
-@import './tokens.scss';
+@use '../../styles/tokens.scss';
+
 .markdown {
-    font-family: $rajsite-body-font-family;
+    font-family: tokens.$rajsite-body-font-family;
     color: #333333;
 
     :global(h1),
     :global(h2),
     :global(h3) {
-        font-family: $rajsite-header-font-family;
+        font-family: tokens.$rajsite-header-font-family;
     }
 
     :global(h3),
@@ -21,7 +22,7 @@
         line-height: 1.3;
         margin-top: 50px;
         margin-bottom: 0px;
-        font-family: $rajsite-header-font-family;
+        font-family: tokens.$rajsite-header-font-family;
     }
 
     :global(h3) {

@@ -17,7 +17,8 @@ interface Props {
 const { date, slug, id } = Astro.props;
 ---
 <style lang="scss">
-  @import 'tokens.scss';
+@use '../../styles/tokens.scss';
+
 .share {
   text-align: right;
   padding: 20px 0 0;
@@ -39,7 +40,7 @@ const { date, slug, id } = Astro.props;
 
 .teaser {
   padding: 50px 0 0 0;
-  font-family: $rajsite-body-font-family;
+  font-family: tokens.$rajsite-body-font-family;
 }
 
 .teaser hr {
