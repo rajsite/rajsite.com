@@ -11,6 +11,23 @@
 :root {
     --rajsite-body-font-family: 'Monaspace Argon';
     --rajsite-header-font-family: 'Monaspace Neon';
+    --rajsite-popup-background-color: black;
+    --rajsite-popup-font-color: white;
+    --rajsite-90-font-color: #999999;
+    --rajsite-60-font-color: #666666;
+    --rajsite-30-font-color: #333333;
+    --rajsite-application-background-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --rajsite-popup-background-color: white;
+        --rajsite-popup-font-color: black;
+        --rajsite-90-font-color: #333333;
+        --rajsite-60-font-color: #666666;
+        --rajsite-30-font-color: #999999;
+        --rajsite-application-background-color: black;
+    }
 }
 
 /* Regular */

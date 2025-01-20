@@ -26,7 +26,7 @@ const { date, slug, id } = Astro.props;
 
 .share a {
   text-decoration: none;
-  color: #bbbbbb;
+  color: tokens.$rajsite-90-font-color;
   padding-left: 12px;
 }
 
@@ -35,7 +35,7 @@ const { date, slug, id } = Astro.props;
 }
 
 .share a:hover {
-  color: #333333;
+  color: tokens.$rajsite-30-font-color;
 }
 
 .teaser {
@@ -49,15 +49,15 @@ const { date, slug, id } = Astro.props;
   display: block;
   width: 50%;
   margin: 16px 0 16px 10px;
-  border: 0px solid #dddddd;
-  border-top: 1px solid #dddddd;
+  border: 0px solid tokens.$rajsite-90-font-color;
+  border-top: 1px solid tokens.$rajsite-90-font-color;
 }
 
 .teaser .index-headline {
-  border-top: 1px solid #dededc;
+  border-top: 1px solid tokens.$rajsite-90-font-color;
   margin: 0;
   padding: 16px 0;
-  color: #b3b3b1;
+  color: tokens.$rajsite-90-font-color;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -112,7 +112,7 @@ const { date, slug, id } = Astro.props;
 }
 
 .teaser .teaser-left .published {
-  color: #999999;
+  color: tokens.$rajsite-90-font-color;
 }
 
 .teaser .teaser-right {
@@ -134,34 +134,34 @@ const { date, slug, id } = Astro.props;
   max-width: 700px;
   font-size: 12px;
   text-align: center;
-  color: #999999;
+  color: tokens.$rajsite-90-font-color;
   line-height: 17.6px;
 }
 
 .site-footer a {
-  color: #666666;
+  color: tokens.$rajsite-60-font-color;
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  color: #333333;
+  color: tokens.$rajsite-30-font-color;
 }
 
 .teaser .teaser-right .site-footer {
   margin: 0;
   padding: 0;
-  color: #333333;
+  color: tokens.$rajsite-30-font-color;
   text-align: left;
   font-size: 14px;
   line-height: 1.3;
-  color: #999999;
+  color: tokens.$rajsite-90-font-color;
 }
 
 .teaser .teaser-right .site-footer .poweredby {
   display: block;
   padding-bottom: 18px;
   font-weight: 700;
-  color: #333333;
+  color: tokens.$rajsite-30-font-color;
 }
 
 .content {

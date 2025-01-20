@@ -22,10 +22,12 @@ const { title, description, slug } = Astro.props;
         <title>{title} | {site.name}</title>
         <style lang="scss">
             @use '../../styles/tokens.scss';
-            body {
-                font-family: tokens.$rajsite-body-font-family;
+            html {
                 margin: 0;
                 padding: 0;
+                background-color: tokens.$rajsite-application-background-color;
+                font-family: tokens.$rajsite-body-font-family;
+                color: tokens.$rajsite-90-font-color;
                 text-rendering: optimizeLegibility;
                 -webkit-font-smoothing: antialiased;
                 -moz-font-feature-settings: "calt=1";
@@ -33,6 +35,10 @@ const { title, description, slug } = Astro.props;
                 -webkit-font-feature-settings: "calt";
                 -o-font-feature-settings: "calt";
                 font-feature-settings: "calt";
+            }
+            body {
+                margin: 0;
+                padding: 0;
             }
         </style>
     </head>
