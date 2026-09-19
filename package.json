@@ -24,15 +24,15 @@
     "spelling": "cspell \"**/*.{md,mdx}\""
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/mdx": "^4.3.13",
-    "@ni/eslint-config-javascript": "^5.1.4",
-    "@ni/eslint-config-typescript": "^5.0.5",
-    "astro": "^5.16.9",
-    "cspell": "^9.6.0",
-    "eslint-plugin-astro": "^1.5.0",
+    "@astrojs/check": "^0.9",
+    "@astrojs/mdx": "^8",
+    "@ni/eslint-config-javascript": "^5",
+    "@ni/eslint-config-typescript": "^5",
+    "astro": "^7",
+    "cspell": "^10",
+    "eslint-plugin-astro": "^1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "sass": "^1.97.2",
+    "sass": "^1",
     "typescript": "~5.9.3"
   },
   "dependencies": {
