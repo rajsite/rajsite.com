@@ -6,6 +6,19 @@ import Footer from '../components/parts/footer.astro';
 
 const description = 'Bringing Web, Engineering, Cloud, and Earth tidbits straight to your neural implant';
 const allBlogPosts = await getCollection('blog');
+if (allBlogPosts.length === 0) {
+  allBlogPosts.push({
+        id: 'no-posts',
+        data: {
+            title: 'No posts yet',
+            description: 'Hopefully coming soon!',
+            date: new Date(),
+            permalink: '',
+        },
+        collection: 'blog'
+    }
+  )
+}
 ---
 <style lang="scss">
 @use '../styles/tokens.scss';
