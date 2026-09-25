@@ -107,7 +107,7 @@ const allBlogPosts = await getCollection('blog');
 }
 
 </style>
-<Base title="Home" description={description} slug="/">
+<Base title="Home" description={description} id="/">
 
     <main class="content">
 
@@ -119,7 +119,7 @@ const allBlogPosts = await getCollection('blog');
         {allBlogPosts.map(post => (
             <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
                 <header class="post-header">
-                    <h2 class="post-title" itemprop="name"><a href={post.slug} itemprop="url">{post.data.title}</a></h2>
+                    <h2 class="post-title" itemprop="name"><a href={post.id} itemprop="url">{post.data.title}</a></h2>
                 </header>
                 <section class="post-excerpt" itemprop="description">
                     <p>{post.data.description}</p>

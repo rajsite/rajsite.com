@@ -5,10 +5,10 @@ import Header from './header.astro';
 interface Props {
     title: string;
     description: string;
-    slug: string;
+    id: string;
 }
 
-const { title, description, slug } = Astro.props;
+const { title, description, id } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,7 @@ const { title, description, slug } = Astro.props;
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,minimum-scale=1">
         <meta name="description" content={description}>
-        <link rel="canonical" href={`${site.url}${slug}`}>
+        <link rel="canonical" href={`${site.url}${id}`}>
         <link rel="stylesheet" href="/tokens.css" >
         <title>{title} | {site.name}</title>
         <style lang="scss">
@@ -43,7 +43,7 @@ const { title, description, slug } = Astro.props;
         </style>
     </head>
     <body>
-        <img src={`https://rajsite.goatcounter.com/count?p=${slug}`} width="1" height="1" alt="" />
+        <img src={`https://rajsite.goatcounter.com/count?p=${id}`} width="1" height="1" alt="" />
         <Header></Header>
         <slot></slot>
     </body>

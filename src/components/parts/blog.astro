@@ -10,11 +10,10 @@ import Icon from '../icons/icon.astro';
 
 interface Props {
     date: Date;
-    slug: string;
     id: string;
 }
 
-const { date, slug, id } = Astro.props;
+const { date, id } = Astro.props;
 ---
 <style lang="scss">
 @use '../../styles/tokens.scss';
@@ -195,7 +194,7 @@ const { date, slug, id } = Astro.props;
             <a class="icon" href={`https://github.com/rajsite/rajsite.com/tree/main/src/content/blog/${id}`}>
 Suggest an Edit
             </a>
-            <a class="icon" href={`https://twitter.com/intent/tweet?url=https://rajsite.com${slug}&via=rajsite`} target="_blank" title="Share on Twitter">
+            <a class="icon" href={`https://twitter.com/intent/tweet?url=https://rajsite.com${id}&via=rajsite`} target="_blank" title="Share on Twitter">
 Share on <Icon iconSvg={iconTwitter}></Icon>
             </a>
         </section>

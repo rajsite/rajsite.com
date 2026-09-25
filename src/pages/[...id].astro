@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { GetStaticPathsResult } from 'astro';
 import Base from '../components/parts/base.astro';
@@ -8,7 +8,7 @@ import Blog from '../components/parts/blog.astro';
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
     const blogEntries = await getCollection('blog');
     return blogEntries.map(entry => ({
-        params: { slug: entry.slug }, props: { entry },
+        params: { id: entry.id }, props: { entry },
     }));
 }
 
@@ -18,16 +18,15 @@ interface Props {
 
 // 2. When it's time to render, you can get the entry directly from the prop
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 <Base
     description={entry.data.description}
     title={entry.data.title}
-    slug={entry.slug}
+    id={entry.id}
 >
     <Blog
         date={entry.data.date}
-        slug={entry.slug}
         id={entry.id}
     >
         <Content />
