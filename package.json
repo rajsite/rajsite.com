@@ -27,6 +27,7 @@
     "@astrojs/check": "^0.9",
     "@astrojs/mdx": "^8",
     "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
     "@ni/eslint-config-javascript": "^5",
     "@ni/eslint-config-typescript": "^5",
     "astro": "^7",

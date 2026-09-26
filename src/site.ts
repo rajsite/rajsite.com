@@ -1,9 +1,9 @@
 export const site = {
-    contact_url: 'http://milanraj.com',
+    contact_url: 'http://www.milanraj.com',
     name: 'Milan Raj',
     year: (new Date()).getFullYear(),
     logo: '/assets/images/logo.gif',
-    url: 'https://rajsite.com',
+    url: 'https://www.rajsite.com',
     bio: 'All Things Web | Engineering | <3 | Austin, TX',
     description: 'Bringing Web, Engineering, Cloud, and Earth tidbits straight to your neural implant',
 } as const;
