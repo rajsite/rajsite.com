@@ -18,6 +18,9 @@ if (allBlogPosts.length === 0) {
     }
   )
 }
+allBlogPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const postsByYear = Map.groupBy(allBlogPosts, post => post.data.date.getFullYear());
+const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' });
 ---
 <style lang="scss">
 @use '../styles/tokens.scss';
@@ -51,7 +54,23 @@ if (allBlogPosts.length === 0) {
   font-weight: 300;
 }
 
+.year-marker {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 32px 0 16px;
+  color: tokens.$rajsite-30-font-color;
+}
+
+.post {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 16px;
+  padding: 8px 0;
+}
+
 .post .post-meta {
+  white-space: nowrap;
   font-family: tokens.$rajsite-body-font-family;
   font-size: 14px;
   color: tokens.$rajsite-90-font-color;
@@ -71,11 +90,10 @@ if (allBlogPosts.length === 0) {
   font-weight: 700;
   font-style: normal;
   letter-spacing: -0.02em;
-  font-size: 36px;
+  font-size: 24px;
   line-height: 1.15;
   color: tokens.$rajsite-30-font-color;
-  margin-bottom: 0px 0px;
-  display: block;
+  margin: 0;
 }
 
 .post .post-title a {
@@ -91,8 +109,9 @@ if (allBlogPosts.length === 0) {
   letter-spacing: -0.02em;
   font-weight: 300;
   font-style: normal;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.59;
+  margin: 0;
   color:tokens.$rajsite-60-font-color;
 }
 
@@ -109,15 +128,6 @@ if (allBlogPosts.length === 0) {
   }
 }
 
-.content article {
-  padding: 0;
-  border-bottom: 1px solid #f2f2f0;
-}
-
-.content article:last-child {
-  border-bottom: 0px;
-}
-
 </style>
 <Base title="Home" description={site.description} id="/">
 
@@ -128,18 +138,16 @@ if (allBlogPosts.length === 0) {
             <h2 class="blog-description">{ site.description }</h2>
         </header>
 
-        {allBlogPosts.map(post => (
-            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-                <header class="post-header">
-                    <h2 class="post-title" itemprop="name"><a href={post.id} itemprop="url">{post.data.title}</a></h2>
-                </header>
-                <section class="post-excerpt" itemprop="description">
-                    <p>{post.data.description}</p>
-                </section>
-                <div class="post-meta">
-                    <time datetime={ post.data.date.toISOString()}>{ new Intl.DateTimeFormat('en-UK', { dateStyle: 'medium' }).format(post.data.date)}</time>
-                </div>
-            </article>
+        {[...postsByYear].map(([year, posts]) => (
+            <section class="year">
+                <h2 class="year-marker">{year}</h2>
+                {posts.map(post => (
+                    <article class="post">
+                        <header class="post-title"><a href={post.id}>{post.data.title}</a></header>
+                        <section class="post-excerpt">{post.data.description} <time class="post-meta" datetime={post.data.date.toISOString()}>{dateFormat.format(post.data.date)}</time></section>
+                    </article>
+                ))}
+            </section>
         ))}
     </main>
 
