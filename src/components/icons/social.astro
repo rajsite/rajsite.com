@@ -17,12 +17,6 @@ const { iconSvg, username, url, title } = Astro.props;
     white-space: nowrap;
 }
 
-.social-media-icons .username {
-    margin-left: 4px;
-    margin-right: 10px;
-    margin-bottom: 18px;
-}
-
 a {
     color: tokens.$rajsite-90-font-color;
     text-decoration: none;
@@ -33,6 +27,4 @@ a:hover {
     text-decoration: underline;
 }
 </style>
-<span class="social-media-icons">
-    <a href={url} title={title}><Icon iconSvg={iconSvg}></Icon><span class="username">{username}</span></a>
-</span>
+<span class="social-media-icons"><a href={url} title={title}><Icon iconSvg={iconSvg}></Icon><span class="username">{username}</span></a></span>
