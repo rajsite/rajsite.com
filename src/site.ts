@@ -5,4 +5,5 @@ export const site = {
     logo: '/assets/images/logo.gif',
     url: 'https://rajsite.com',
     bio: 'All Things Web | Engineering | <3 | Austin, TX',
+    description: 'Bringing Web, Engineering, Cloud, and Earth tidbits straight to your neural implant',
 } as const;

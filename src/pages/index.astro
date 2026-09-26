@@ -4,7 +4,6 @@ import { site } from '../site';
 import Base from '../components/parts/base.astro';
 import Footer from '../components/parts/footer.astro';
 
-const description = 'Bringing Web, Engineering, Cloud, and Earth tidbits straight to your neural implant';
 const allBlogPosts = await getCollection('blog');
 if (allBlogPosts.length === 0) {
   allBlogPosts.push({
@@ -120,13 +119,13 @@ if (allBlogPosts.length === 0) {
 }
 
 </style>
-<Base title="Home" description={description} id="/">
+<Base title="Home" description={site.description} id="/">
 
     <main class="content">
 
         <header class="blog-header">
             <h1 class="blog-title">{ site.name }</h1>
-            <h2 class="blog-description">{ description }</h2>
+            <h2 class="blog-description">{ site.description }</h2>
         </header>
 
         {allBlogPosts.map(post => (
