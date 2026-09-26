@@ -11,9 +11,10 @@ import Icon from '../icons/icon.astro';
 interface Props {
     date: Date;
     id: string;
+    filePath: string;
 }
 
-const { date, id } = Astro.props;
+const { date, id, filePath } = Astro.props;
 ---
 <style lang="scss">
 @use '../../styles/tokens.scss';
@@ -191,7 +192,7 @@ const { date, id } = Astro.props;
     </Markdown>
     <footer>
         <section class="share">
-            <a class="icon" href={`https://github.com/rajsite/rajsite.com/tree/main/src/content/blog/${id}`}>
+            <a class="icon" href={`https://github.com/rajsite/rajsite.com/blob/main/${filePath}`}>
 Suggest an Edit
             </a>
             <a class="icon" href={`https://twitter.com/intent/tweet?url=https://www.rajsite.com${id}&via=rajsite`} target="_blank" title="Share on Twitter">

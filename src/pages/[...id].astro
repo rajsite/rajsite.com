@@ -28,6 +28,7 @@ const { Content } = await render(entry);
     <Blog
         date={entry.data.date}
         id={entry.id}
+        filePath={entry.filePath!}
     >
         <Content />
     </Blog>
