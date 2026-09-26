@@ -6,10 +6,10 @@ import Page from "../components/parts/page.astro";
 import SocialGithub from "../components/icons/social-github.astro";
 import SocialTwitter from "../components/icons/social-twitter.astro";
 import SocialLinkedin from "../components/icons/social-linkedin.astro";
-import HoverHint from "../components/hover-hint.astro";
+import { site } from "../site";
 
 <Base
-    description={'Bringing Web, Engineering, Cloud, and Earth tidbits straight to your neural implant'}
+    description={site.description}
     id="/about/"
     title={frontmatter.title}>
 <Page>
@@ -19,21 +19,11 @@ import HoverHint from "../components/hover-hint.astro";
 <img width="700" height="500" src="/assets/images/leap_quadrotor.png" style="max-inline-size: 100%; block-size: auto;" />
 
 My name is Milan Raj.
-I develop <HoverHint hint={`Progressive webapp.
-Idea! Make backend webscale!
-OPs demands coffee.`}>modern web apps</HoverHint>
- and play with <HoverHint hint={`Duct taping devices to a series of tubes.
- 🦆 📼 📱 💈 💈 💈`}>internet connected devices.</HoverHint>
+I develop modern web apps and play with browser connected devices.
 
-Technologies that pique my interest these days are [Web Components][web_components], [Physical Web][physical_web] with [Web Bluetooth][web_bluetooth], the [Rust programming language][rust], [Web Assembly][wasm], and pushing the limits of [NI LabVIEW's web technologies][labview_web_services].
+Technologies that pique my interest these days are WebAssembly Components, Web Components, and Rust.
 
 Let's get in touch! <SocialGithub /><SocialTwitter /><SocialLinkedin />
 
-[web_components]: https://webcomponents.org/
-[physical_web]: https://google.github.io/physical-web/
-[web_bluetooth]: https://www.w3.org/community/web-bluetooth/
-[rust]: https://www.rust-lang.org/
-[wasm]: https://webassembly.org/
-[labview_web_services]: https://decibel.ni.com/content/groups/web-services
 </Page>
 </Base>
